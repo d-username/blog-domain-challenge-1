@@ -18,8 +18,9 @@ model User {
   username  String   @unique @db.VarChar(10)
   email     String   @unique @db.VarChar(25)
 
-  profile Profile?
-  Posts   Post[]
+  profile  Profile?
+  posts    Post[]
+  comments Comment[]
 }
 
 model Profile {
@@ -46,7 +47,7 @@ model Post {
 
   user    User      @relation(fields: [userId], references: [id])
   userId  Int
-  Comment Comment[]
+  comment Comment[]
 }
 
 model Comment {
@@ -59,4 +60,6 @@ model Comment {
 
   post   Post @relation(fields: [postId], references: [id])
   postId Int
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
 }

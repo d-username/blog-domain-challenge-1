@@ -68,12 +68,14 @@ async function seed() {
         content: "Very very very much agree on this",
         published: true,
         postId: 2,
+        userId: 2,
       },
       {
         title: "Comment Title...",
         content: "I am having a very happy day too.",
         published: true,
         postId: 2,
+        userId: 3,
       },
     ],
   });
